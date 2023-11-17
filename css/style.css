@@ -1,9 +1,37 @@
 @import url(https://fonts.bunny.net/css?family=poppins:600);
 @import url(variables.css);
 
+.dark-mode {
+  --background: var(--dark-background-color);
+  --text: var(--dark-text-color);
+}
+
+.light-mode {
+  --background-color: var(--light-background-color);
+  --text: var(--light-text-color);
+}
+
+.dark-mode .header-logo {
+  content: url(../public/img/logo_outlined.png);
+}
+
+.light-mode .header-logo {
+  content: url(../public/img/logo.png);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background);
+  color: var(--text);
+}
+
 nav li a {
   text-decoration: none;
   color: var(--text);
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5em;
 }
 
 nav ul li {
@@ -14,8 +42,11 @@ nav ul li {
 nav ul {
   display: flex;
   flex-direction: row;
-  height: 100%;
-  width: 100%;
+}
+
+.header-logo {
+  max-height: 7rem;
+  max-width: 7rem;
 }
 
 * {
@@ -30,102 +61,10 @@ h1 {
   font-size: 3.5em;
 }
 
-.theme-switch-input-header:checked~main,
-.theme-switch-input-header:checked~header {
-  --text: #fff;
-}
-
-.theme-switch-input-header:checked~main {
-  --gradDark: hsl(198, 44%, 11%);
-  --gradLight: hsl(198, 39%, 29%);
-}
-
-.theme-switch-input-header,
-.theme-switch-label-header {
-  position: absolute;
-  z-index: 1;
-}
-
-.theme-switch-input {
-  opacity: 0;
-}
-
-.theme-switch-input:hover+.theme-switch-label-header,
-.theme-switch-input:focus+.theme-switch-label-header {
-  background-color: lightSlateGray;
-}
-
-.theme-switch-input:hover+.theme-switch-label-header span::after,
-.theme-switch-input:focus+.theme-switch-label-header span::after {
-  background-color: #d4ebf2;
-}
-
-.theme-switch-input-header {
-  padding: 20px;
-  margin: 60px;
-  transition: background-color 200ms ease-in-out;
-  width: 120px;
-  height: 50px;
-  border-radius: 50px;
-  text-align: center;
-  background-color: slateGray;
-  box-shadow: -4px 4px 15px inset rgba(0, 0, 0, 0.4);
-}
-
-.theme-switch-input-header::before,
-.theme-switch-input-header::after {
-  font-size: 2rem;
-  position: absolute;
-  transform: translate3d(0, -50%, 0);
-  top: 50%;
-}
-
-.theme-switch-input-header::before {
-  content: "☼";
-  right: 100%;
-  margin-right: 10px;
-  color: orange;
-}
-
-.theme-switch-input-header::after {
-  content: "☾";
-  left: 100%;
-  margin-left: 10px;
-  color: lightSlateGray;
-}
-
-span {
-  position: absolute;
-  bottom: calc(100% + 10px);
-  left: 0;
-  width: 100%;
-}
-
-span::after {
-  position: absolute;
-  top: calc(100% + 15px);
-  left: 5px;
-  width: 40px;
-  height: 40px;
-  content: "";
-  border-radius: 50%;
-  background-color: lightBlue;
-  transition: transform 200ms, background-color 200ms;
-  box-shadow: -3px 3px 8px rgba(0, 0, 0, 0.4);
-}
-
-.theme-switch-input-header:checked~.theme-switch-label-header {
-  background-color: lightSlateGray;
-}
-
-.theme-switch-input-header:checked~.theme-switch-label-header::before {
-  color: lightSlateGray;
-}
-
-.theme-switch-input-header:checked~.theme-switch-label-header::after {
-  color: turquoise;
-}
-
-.theme-switch-input-header:checked~.theme-switch-label-header span::after {
-  transform: translate3d(70px, 0, 0);
+dark-mode-toggle {
+  /* position: absolute;
+  top: 1rem;
+  right: 1rem; */
+  width: 2.5rem;
+  height: 2.5rem;
 }
