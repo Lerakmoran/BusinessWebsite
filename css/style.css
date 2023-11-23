@@ -19,6 +19,17 @@
   content: url(../public/img/logo.png);
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+}
+
 header {
   display: flex;
   align-items: center;
@@ -61,10 +72,43 @@ h1 {
   font-size: 3.5em;
 }
 
+p {
+  font-family: "Poppins", sans-serif;
+  font-size: 1em;
+}
+
 dark-mode-toggle {
-  /* position: absolute;
-  top: 1rem;
-  right: 1rem; */
   width: 2.5rem;
   height: 2.5rem;
+}
+
+/* Over container van index/home pagina */
+.over-ons-container-min {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background);
+  color: var(--text);
+  padding: 1rem;
+}
+
+.talen-die-wij-kunnen-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background);
+  color: var(--text);
+  margin: 0 auto;
+  width: min(95%, 45rem);
+}
+
+.talen-die-wij-kunnen-container img {
+  background-color: rgba(17, 25, 40, 0.25);
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 100px;
+  height: 100px;
 }

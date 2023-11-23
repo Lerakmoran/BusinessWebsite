@@ -8,14 +8,6 @@ darkModeToggle.appearance = "switch";
 // Set the appearance to resemble a toggle (dark mode: on/off)
 darkModeToggle.appearance = "toggle";
 
-// Set a "remember the last selected mode" label
-// darkModeToggle.remember = "Remember this";
-
-// Remember the user's last color scheme choice
-darkModeToggle.setAttribute("permanent", "");
-// Forget the user's last color scheme choice
-darkModeToggle.removeAttribute("permanent");
-
 document.addEventListener("colorschemechange", (e) => {
   //   console.log(`Color scheme changed to ${e.detail.colorScheme}.`);
 
@@ -26,10 +18,19 @@ document.addEventListener("colorschemechange", (e) => {
     document.body.classList.add("light-mode");
     document.body.classList.remove("dark-mode");
   }
+
+  // Remember the user's last color scheme choice
+  darkModeToggle.setAttribute("permanent", e.detail.colorScheme);
 });
 
-// document.addEventListener("permanentcolorscheme", (e) => {
-//   console.log(
-//     `${e.detail.permanent ? "R" : "Not r"}emembering the last selected mode.`
-//   );
-// });
+document.addEventListener("load", (e) => {
+  if (darkModeToggle.getAttribute("permanent") === "dark") {
+    document.body.classList.add("dark-mode");
+    document.body.classList.remove("light-mode");
+    darkModeToggle.mode = "dark";
+  } else if (darkModeToggle.getAttribute("permanent") === "light") {
+    document.body.classList.add("light-mode");
+    document.body.classList.remove("dark-mode");
+    darkModeToggle.mode = "light";
+  }
+});
