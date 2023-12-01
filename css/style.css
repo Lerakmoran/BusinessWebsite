@@ -1,0 +1,114 @@
+@import url(https://fonts.bunny.net/css?family=poppins:600);
+@import url(variables.css);
+
+.dark-mode {
+  --background: var(--dark-background-color);
+  --text: var(--dark-text-color);
+}
+
+.light-mode {
+  --background-color: var(--light-background-color);
+  --text: var(--light-text-color);
+}
+
+.dark-mode .header-logo {
+  content: url(../public/img/logo_outlined.png);
+}
+
+.light-mode .header-logo {
+  content: url(../public/img/logo.png);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background);
+  color: var(--text);
+}
+
+nav li a {
+  text-decoration: none;
+  color: var(--text);
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5em;
+}
+
+nav ul li {
+  list-style: none;
+  margin-left: 2rem;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+}
+
+.header-logo {
+  max-height: 7rem;
+  max-width: 7rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 3.5em;
+}
+
+p {
+  font-family: "Poppins", sans-serif;
+  font-size: 1em;
+}
+
+dark-mode-toggle {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+/* Over container van index/home pagina */
+.over-ons-container-min {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background);
+  color: var(--text);
+  padding: 1rem;
+}
+
+.talen-die-wij-kunnen-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background);
+  color: var(--text);
+  margin: 0 auto;
+  width: min(95%, 45rem);
+}
+
+.talen-die-wij-kunnen-container img {
+  background-color: rgba(17, 25, 40, 0.25);
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 100px;
+  height: 100px;
+}
